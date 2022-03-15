@@ -11,8 +11,6 @@ function PxToEm() {
 
     const handleBaseChange = (payload) => {
         setBase(payload)
-        setPxToEm(0)
-        setEmToPx(0)
         setFinal(0)
     }
 
