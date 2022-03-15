@@ -1,0 +1,26 @@
+.input-controller {
+    border: 3px solid #1a1e3a;
+    display: flex;
+    max-width: 300px;
+    justify-items: space-around;
+    padding: 0px;
+}
+
+.input-field {
+    background-color: rgb(235, 235, 235);
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+}
+
+.main-input {
+    border: 0px;
+    box-shadow: 0px;
+    flex-grow: 2;
+    font-size: 16px;
+    padding: 0 10px;
+}
+  
+.main-input:focus {
+    outline: none;
+}
