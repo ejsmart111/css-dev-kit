@@ -3,3 +3,13 @@
     justify-content: space-between;
     margin-top: 30px;
 }
+
+.upper {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 567px) {
+    .equation {
+        display: block;
+    }   
+}

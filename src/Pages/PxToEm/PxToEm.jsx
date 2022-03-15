@@ -32,13 +32,13 @@ function PxToEm() {
     <div style={{padding: '0 30px'}}>
         <AppInput handleChange={payload => handleBaseChange(payload) }  initial={16} />
         <div className={pxStyles.equation}>
-            <div>
+            <div className={pxStyles.upper}>
                 <AppInput handleChange={payload => handlePxChange(payload) } initial={pxToEm} label={'Px to Em'} />
             </div>
-            <div>
+            <div className={pxStyles.upper}>
                 <AppInput handleChange={payload => handleEmChange(payload) } initial={emToPx} field={'em'} label={'Em to Px'} />
             </div>
-            <div>
+            <div className={pxStyles.upper}>
                 <AppInput readOnlyInput={final} isReadonly={true} initial={final} field={unit} inputType={'text'} label="Final Result" />
             </div>
         </div>
