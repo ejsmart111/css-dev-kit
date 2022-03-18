@@ -96,63 +96,70 @@ function LinearGradient() {
     }
     
   return (
-    <div className={gradientStyles.container}>
-        <div style={{background: `${gradientType}-gradient(${backgroundGradient()})`}} className={gradientStyles.example}>
-            
-        </div>
-        <div className={gradientStyles['settings']}>
-            <div>
-                <h3 className={gradientStyles.hh}>{selectedColor.colorName}</h3>
-                <div className={gradientStyles['overall']}>
-                    <div  style={{display: 'flex', justifyContent: 'space-between'}}>
-                        <div>
-                            <button onClick={generateGradient} className={gradientStyles.butt}>Generate {gradientType === 'linear'?'radial':'linear'} gradient</button>
-                        </div>
-                        <div>
-                            {
-                                colors.length > 2 && <div onClick={removeColor} style={{textAlign: 'right', marginTop: '5px', fontSize: '20px', cursor: 'pointer'}}>&#x2715;</div>
-                            }
-                        </div>
-                    </div>
-                    <div className={gradientStyles['control-containers']}>
-                        <label className={gradientStyles.labels}>Gradient Color</label><br></br><br></br>
-                        <Color handleColor={(value) => handleChanges(value, 'color')} initial={selectedColor.color} />
-                    </div>
-                    <div className={gradientStyles['control-containers']}>
-                        <label className={gradientStyles.labels}>Color Opacity</label><br></br>
-                        <div style={{display: 'flex'}}>
-                            <Slider handleInput={value => handleChanges(value, 'opacity')} initial={selectedColor.color} min={'0'} max={'1'} step={'0.1'} initial={selectedColor.opacity} />
-                            <span style={{marginLeft: '10px'}}>{selectedColor.opacity}</span>
-                        </div>
-                    </div>
-                    <div className={gradientStyles['control-containers']}>
-                        <label className={gradientStyles.labels}>% Color Proportion</label><br></br>
-                        <div style={{display: 'flex'}}>
-                            <Slider handleInput={value => handleChanges(value, 'section')} min={'0'} max={'100'} step={'1'} initial={selectedColor.section} />
-                            <span style={{marginLeft: '10px'}}>{selectedColor.section}%</span>
-                        </div>
-                    </div>
-                </div>
+      <>
+        <div className={gradientStyles.container}>
+            <div style={{background: `${gradientType}-gradient(${backgroundGradient()})`}} className={gradientStyles.example}>
+                
             </div>
-            <div className={gradientStyles['selected-colors']}>
-                <div onClick={pushToColors} style={{color: '#000', background: '#e3e3e3'}} className={`${gradientStyles.color}`}>
-                    <p>+ Add Color</p>
-                </div>
-                {
-                    colors.map((color, index) => {
-                        return (
-                            <div onClick={() => handleClick(color)} key={color.colorName} style={{
-                                background: color.color, 
-                                color: getColor(color.color),
-                            }} className={`${color.id === selectedColor.id && gradientStyles.active} ${gradientStyles.color}`}>
-                                <p>{color.colorName}</p>
+            <div className={gradientStyles['settings']}>
+                <div>
+                    <h3 className={gradientStyles.hh}>{selectedColor.colorName}</h3>
+                    <div className={gradientStyles['overall']}>
+                        <div  style={{display: 'flex', justifyContent: 'space-between'}}>
+                            <div>
+                                <button onClick={generateGradient} className={gradientStyles.butt}>Generate {gradientType === 'linear'?'radial':'linear'} gradient</button>
                             </div>
-                        )
-                    })
-                }
+                            <div>
+                                {
+                                    colors.length > 2 && <div onClick={removeColor} style={{textAlign: 'right', marginTop: '5px', fontSize: '20px', cursor: 'pointer'}}>&#x2715;</div>
+                                }
+                            </div>
+                        </div>
+                        <div className={gradientStyles['control-containers']}>
+                            <label className={gradientStyles.labels}>Gradient Color</label><br></br><br></br>
+                            <Color handleColor={(value) => handleChanges(value, 'color')} initial={selectedColor.color} />
+                        </div>
+                        <div className={gradientStyles['control-containers']}>
+                            <label className={gradientStyles.labels}>Color Opacity</label><br></br>
+                            <div style={{display: 'flex'}}>
+                                <Slider handleInput={value => handleChanges(value, 'opacity')} initial={selectedColor.color} min={'0'} max={'1'} step={'0.1'} initial={selectedColor.opacity} />
+                                <span style={{marginLeft: '10px'}}>{selectedColor.opacity}</span>
+                            </div>
+                        </div>
+                        <div className={gradientStyles['control-containers']}>
+                            <label className={gradientStyles.labels}>% Color Proportion</label><br></br>
+                            <div style={{display: 'flex'}}>
+                                <Slider handleInput={value => handleChanges(value, 'section')} min={'0'} max={'100'} step={'1'} initial={selectedColor.section} />
+                                <span style={{marginLeft: '10px'}}>{selectedColor.section}%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={gradientStyles['selected-colors']}>
+                    <div onClick={pushToColors} style={{color: '#000', background: '#e3e3e3'}} className={`${gradientStyles.color}`}>
+                        <p>+ Add Color</p>
+                    </div>
+                    {
+                        colors.map((color, index) => {
+                            return (
+                                <div onClick={() => handleClick(color)} key={color.colorName} style={{
+                                    background: color.color, 
+                                    color: getColor(color.color),
+                                }} className={`${color.id === selectedColor.id && gradientStyles.active} ${gradientStyles.color}`}>
+                                    <p>{color.colorName}</p>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
         </div>
-    </div>
+        <div style={{marginTop: '50px', padding: '20px', background: '#10102e', color: '#fff'}}>
+            <code>div {'{'}</code><br></br>
+                <code style={{margin: '20px'}}>background: {`${gradientType}-gradient(${backgroundGradient()})`}</code><br></br>
+            <code>{'}'}</code>
+        </div>
+    </>
   )
 }
 
