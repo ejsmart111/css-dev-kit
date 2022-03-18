@@ -2,6 +2,7 @@ import Color from '../../components/Color/Color'
 import Slider from '../../components/Slider/Slider'
 import BoxShadowStyles from './BoxShadow.module.css'
 import { useState } from 'react'
+import hexOpacity from '../../config'
 
 function BoxShadow() {
     const [horizontal, setHorizontal] = useState(0)
@@ -19,20 +20,6 @@ function BoxShadow() {
 
     const handleSelectChange = () => {
         setInset(!inset)
-    }
-
-    const hexOpacity = {
-        '1': 'ff',
-        '0.9': 'e6',
-        '0.8': 'cc',
-        '0.7': 'b3',
-        '0.6': '99',
-        '0.5': '80',
-        '0.4': '66',
-        '0.3': '4d',
-        '0.2': '33',
-        '0.1': '1a',
-        '0': '00',
     }
 
     const isInset = inset ? 'inset' : ''

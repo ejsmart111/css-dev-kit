@@ -6,7 +6,7 @@ function AppInput({ inputType, field, label, initial, handleChange, isReadonly, 
 
     useEffect(() => {
         initial !== 0 && setInputValue(initial)
-    }, [])
+    }, [initial])
 
     const handleInputChange = (evt) => {
         handleChange(evt.target.value)
@@ -17,7 +17,7 @@ function AppInput({ inputType, field, label, initial, handleChange, isReadonly, 
       <>
         <label style={{fontWeight: 'bold', display: 'block'}}>{label}</label>
         <div className={InputStyles['input-controller']} >
-            <input readOnly={isReadonly} onInput={handleInputChange} className={InputStyles['main-input']} type={inputType} value={isReadonly? readOnlyInput : inputValue} />
+            <input readOnly={isReadonly} onInput={handleInputChange} className={InputStyles['main-input']} type={inputType} value={initial} />
             <div className={InputStyles['input-field']}>
                 <p style={{margin: '0px'}}>{ field }</p>
             </div>

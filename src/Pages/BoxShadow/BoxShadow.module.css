@@ -122,5 +122,11 @@
         justify-items: center;
         margin: 0 auto;
         padding: 20px;
+        margin-left: -15px;
+        justify-content: start;
+    }
+    .example {
+        margin: 0;
+        justify-content: start;
     }
 }

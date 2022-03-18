@@ -11,7 +11,7 @@ function Color({ handleColor , initial}) {
 
   useEffect(() => {
     setColor(initial)
-  }, [])
+  }, [initial])
   
   return (
     <>

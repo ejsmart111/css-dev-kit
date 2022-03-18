@@ -16,12 +16,14 @@ function PxToEm() {
 
     const handlePxChange = payload => {
         setPxToEm(payload)
+        setEmToPx(0)
         setFinal(payload/base)
         setUnit('em')
     }
 
     const handleEmChange = payload => {
         setEmToPx(payload)
+        setPxToEm(0)
         setFinal(payload*base)
         setUnit('px')
     }
@@ -30,7 +32,7 @@ function PxToEm() {
     
   return (
     <div style={{padding: '0 30px'}}>
-        <AppInput handleChange={payload => handleBaseChange(payload) }  initial={16} />
+        <AppInput handleChange={payload => handleBaseChange(payload) }  initial={base} />
         <div className={pxStyles.equation}>
             <div className={pxStyles.upper}>
                 <AppInput handleChange={payload => handlePxChange(payload) } initial={pxToEm} label={'Px to Em'} />

@@ -1,8 +1,8 @@
 .range {
     margin-left: 10px;
-    min-width: 300px;
-    width: 100%;
+    min-width: 90%;
     -webkit-appearance: none;
+    background-color: transparent;
 }
 
 .range:focus {

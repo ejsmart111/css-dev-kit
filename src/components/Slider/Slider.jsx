@@ -7,7 +7,7 @@ function Slider ({handleInput, min, max, step, initial}) {
 
   useEffect(() => {
     setInputValue(initial)
-  }, [])
+  }, [initial])
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value)
